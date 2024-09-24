@@ -1,6 +1,7 @@
-# 📄 Note Linker Plugin - Obsidian Plugin
 
-👋 **Welcome to the Note Linker Plugin repository!**
+# 📄 Obsidian Better Auto Linker - Obsidian Plugin
+
+👋 **Welcome to the Obsidian Better Auto Linker repository!**
 
 This plugin was created to **automate the creation of links between notes in Obsidian**, and while the developer isn’t a professional coder, they do know **Python** 🐍 well enough to understand most of what’s going on... more or less 😅. When it comes to **JavaScript** and **TypeScript**, however, it’s a different story. So, everything has been coded in **JavaScript** and kept in one single `main.js` file (yes, it’s not the cleanest, but it works!) 🥲.
 
@@ -29,7 +30,7 @@ Here are a few ideas for future features (if someone is willing to help or if I 
 - 📝 **Note alias support**: Add support for managing and resolving note aliases.
 - 🔗 **Improved Wikilink support**: Make handling Wikilinks even smoother.
 - ⚙️ **Advanced filtering options**: Add more customizable filtering options for note scanning.
-- 📊 **Link statistics**: Provide stats on the connections between notes to visualize their interconnections better.
+- 📊 **Link statistics**: Provide stats on the connections between notes to better visualize their interconnections.
 
 ## 🛠️ Why this Plugin?
 
@@ -44,14 +45,14 @@ This project has potential to become cleaner and more robust, so if you want to 
 
 ## 🛠️ Installation
 
-To install and try out the **Better Note Linker Plugin**, follow these steps:
+To install and try out the **Obsidian Better Auto Linker Plugin**, follow these steps:
 
 1. Download the `main.js` and `manifest.json` files from this repository.
 2. Create a new folder in your Obsidian vault under the path:  
-   `<your-vault>/.obsidian/plugins/better-note-linker-plugin/`
+   `<your-vault>/.obsidian/plugins/obsidian-better-auto-linker/`
 3. Place the downloaded `main.js` and `manifest.json` files into this folder.
 4. Restart Obsidian.
-5. Go to **Settings** > **Community plugins** and enable the **Better Note Linker Plugin**.
+5. Go to **Settings** > **Community plugins** and enable the **Obsidian Better Auto Linker Plugin**.
 
 That’s it! The plugin should now be active, and you can start using it to automate the linking of your notes.
 
@@ -66,4 +67,3 @@ If you have suggestions, ideas for improvements, or run into any bugs, feel free
 ---
 
 Thanks to everyone who takes the time to test, contribute, or even just read this README! Together, we can turn this plugin into something really useful for the Obsidian community. 💪
-
