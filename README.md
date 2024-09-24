@@ -42,6 +42,19 @@ However, if the community strongly feels it should be refactored into **TypeScri
 If you’re comfortable with **JavaScript** or **TypeScript** and you see ways to improve or add features, any help would be greatly appreciated!  
 This project has potential to become cleaner and more robust, so if you want to refactor the code or suggest improvements, **pull requests and issues are open!** 🎉
 
+## 🛠️ Installation
+
+To install and try out the **Better Note Linker Plugin**, follow these steps:
+
+1. Download the `main.js` and `manifest.json` files from this repository.
+2. Create a new folder in your Obsidian vault under the path:  
+   `<your-vault>/.obsidian/plugins/better-note-linker-plugin/`
+3. Place the downloaded `main.js` and `manifest.json` files into this folder.
+4. Restart Obsidian.
+5. Go to **Settings** > **Community plugins** and enable the **Better Note Linker Plugin**.
+
+That’s it! The plugin should now be active, and you can start using it to automate the linking of your notes.
+
 ## 🔗 Other plugins
 
 I’ve also created other plugins for Obsidian, so if you’re curious, feel free to check them out on my GitHub profile.
