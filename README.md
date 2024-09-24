@@ -23,14 +23,22 @@ The plugin already offers several handy features for automating link creation be
 - 🔗 **Wikilinks support**: Works with Wikilinks (it’s not perfect, but it works!).
 - 📏 **Custom modal length**: Adjust the length of the popup to make selecting links easier.
 
-## 🛠️ Features for the Future
+## 🛠️ Features for the Future (Roadmap)
 
-Here are a few ideas for future features (if someone is willing to help or if I get the energy to add them 😄):
+Here’s a checklist of ideas for future features (if someone is willing to help or if I get the energy to add them 😄):
 
-- 📝 **Note alias support**: Add support for managing and resolving note aliases.
-- 🔗 **Improved Wikilink support**: Make handling Wikilinks even smoother.
-- ⚙️ **Advanced filtering options**: Add more customizable filtering options for note scanning.
-- 📊 **Link statistics**: Provide stats on the connections between notes to better visualize their interconnections.
+- [ ] 📝 **Note alias support**: Add support for managing and resolving note aliases.
+- [ ] 🔗 **Improved Wikilink support**: Make handling Wikilinks even smoother.
+- [ ] ⚙️ **Advanced filtering options**: Add more customizable filtering options for note scanning.
+- [ ] 📊 **Link statistics**: Provide stats on the connections between notes to better visualize their interconnections.
+- [ ] 🎨 **Better UI/Design for link selection**: Improve the aesthetics and user interface for selecting links to create.
+- [ ] 🐛 **Fix display bugs/misalignment**: Correct display issues or alignment bugs.
+- [ ] 📝 **Handle special characters properly**: Improve handling of special characters like parentheses or backslashes that JavaScript struggles with.
+- [ ] ⚡ **Optimize speed further**: Make the scanning process even faster and more efficient.
+- [ ] 🖼️ **Customizable selection window**: Allow customization of the selection window, such as the amount of context shown for each link.
+- [ ] 📝 **Alias detection and replacement**: Support the detection and replacement of links using note aliases.
+- [ ] 🔄 **Proper link replacement**: Ensure that link replacement works smoothly, without bugs, and in the correct order.
+- [ ] 🌟 **And many more...**: There’s always room for more improvements and ideas!
 
 ## 🛠️ Why this Plugin?
 
