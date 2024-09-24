@@ -377,16 +377,16 @@ class LinkSelectionModal extends Modal {
 
     new Setting(selectAllButtonsContainer)
       .addButton(btn => {
-        btn.setButtonText('Select All')
+        btn.setButtonText('Select/Unselect All')
           .onClick(() => this.selectAll());
       });
-
+  
     new Setting(selectAllButtonsContainer)
       .addButton(btn => {
-        btn.setButtonText('Select All on This Page')
+        btn.setButtonText('Select/Unselect All on This Page')
           .onClick(() => this.selectAllOnPage());
       });
-
+  
     // Dynamic label to show how many items are selected
     this.selectionCountLabel = footer.createEl('span', { text: `Selected: 0/${this.potentialLinks.length}` });
 
@@ -451,27 +451,44 @@ class LinkSelectionModal extends Modal {
     this.updatePageIndicator(this.resultContainer);
   }
 
-  // Function to select all items
+  // Function to select/unselect all items
   selectAll() {
-    this.potentialLinks.forEach(linkObj => {
-      this.checkedLinks.add(linkObj);
-    });
+    const allSelected = this.checkedLinks.size === this.potentialLinks.length;
+    
+    if (allSelected) {
+      this.checkedLinks.clear();  // Unselect all if everything is selected
+    } else {
+      this.potentialLinks.forEach(linkObj => {
+        this.checkedLinks.add(linkObj);
+      });
+    }
+    
     this.displayLinks(); // Refresh the checkbox display
     this.updateSelectionCount(); // Update the label
   }
 
-  // Function to select all items de la page actuelle
+  // Function to select/unselect all items on the current page
   selectAllOnPage() {
     const start = this.currentPage * this.pageSize;
     const end = Math.min(start + this.pageSize, this.potentialLinks.length);
     const linksToShow = this.potentialLinks.slice(start, end);
+    
+    const allPageSelected = linksToShow.every(linkObj => this.checkedLinks.has(linkObj));
+    
+    if (allPageSelected) {
+      linksToShow.forEach(linkObj => {
+        this.checkedLinks.delete(linkObj); // Unselect all on this page
+      });
+    } else {
+      linksToShow.forEach(linkObj => {
+        this.checkedLinks.add(linkObj); // Select all on this page
+      });
+    }
+  
+  this.displayLinks(); // Refresh the checkbox display
+  this.updateSelectionCount(); // Update the label
+}
 
-    linksToShow.forEach(linkObj => {
-      this.checkedLinks.add(linkObj);
-    });
-    this.displayLinks(); // Refresh the checkbox display
-    this.updateSelectionCount(); // Update the label
-  }
 
   // Function to change page and display links
   changePage(delta) {
