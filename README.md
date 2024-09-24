@@ -64,6 +64,12 @@ I’ve also created other plugins for Obsidian, so if you’re curious, feel fre
 
 If you have suggestions, ideas for improvements, or run into any bugs, feel free to open an issue or a pull request. Since **English isn’t my first language**, please be patient if I misunderstand something or take time to respond. I’ll do my best to understand and reply! 🤞
 
+## ⭐ Show Your Support
+
+I’m not really concerned about the number of stars, but if you find this project useful or interesting, consider giving it a star on GitHub to help me gauge the interest. If you’d rather not leave a star, that’s totally fine – feel free to open an issue, submit a pull request, or even drop a message of support in an issue instead! All kinds of feedback, advice, and contributions are always welcome and appreciated. 😊
+
 ---
 
 Thanks to everyone who takes the time to test, contribute, or even just read this README! Together, we can turn this plugin into something really useful for the Obsidian community. 💪
+
+
