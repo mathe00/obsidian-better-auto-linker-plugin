@@ -1,83 +1,56 @@
+# 📄 Obsidian Better Auto Linker - (OBSOLETE / ARCHIVED)
 
-# 📄 Obsidian Better Auto Linker - Obsidian Plugin
+👋 **Welcome to the repository for the *old* Obsidian Better Auto Linker plugin.**
 
-👋 **Welcome to the Obsidian Better Auto Linker repository!**
+**⚠️ IMPORTANT NOTICE: THIS PLUGIN IS OBSOLETE AND NO LONGER MAINTAINED! ⚠️**
 
-This plugin was created to **automate the creation of links between notes in Obsidian**, and while the developer isn’t a professional coder, they do know **Python** 🐍 well enough to understand most of what’s going on... more or less 😅. When it comes to **JavaScript** and **TypeScript**, however, it’s a different story. So, everything has been coded in **JavaScript** and kept in one single `main.js` file (yes, it’s not the cleanest, but it works!) 🥲.
-
-Oh, and by the way, **English isn’t my first language**! So, I apologize in advance if I misunderstand anything or don’t respond perfectly to issues or pull requests 😅. Please be patient, and I’ll do my best to understand and reply!
-
-The goal of this plugin is simple: make life in Obsidian easier by automatically linking notes together. With a few more ideas in mind, this plugin will hopefully keep evolving into something even more useful!
-
-## 🚀 Features Available
-
-The plugin already offers several handy features for automating link creation between notes:
-
-- 📝 **Note scanning**: Scans markdown files to detect potential matches with other notes.
-- 🔗 **Link suggestions**: Provides link suggestions to insert into the active note.
-- ⚡ **Title caching**: Uses a caching system to avoid re-indexing all notes every time, improving performance.
-- 📄 **Modal interface with pagination**: Displays results in a modal with navigation buttons to go through the result pages.
-- ✅ **Link selection**: Allows selecting all links on a page or from the entire set of found matches.
-- 🔍 **Excluding folders and frontmatter**: Lets you exclude certain folders or sections (like frontmatter) from being scanned.
-- 🔡 **Case sensitivity**: Supports case-sensitive matching for notes.
-- 🔗 **Wikilinks support**: Works with Wikilinks (it’s not perfect, but it works!).
-- 📏 **Custom modal length**: Adjust the length of the popup to make selecting links easier.
-
-## 🛠️ Features for the Future (Roadmap)
-
-Here’s a checklist of ideas for future features (if someone is willing to help or if I get the energy to add them 😄):
-
-- [ ] 📝 **Note alias support**: Add support for managing and resolving note aliases.
-- [ ] 🔗 **Improved Wikilink support**: Make handling Wikilinks even smoother.
-- [ ] ⚙️ **Advanced filtering options**: Add more customizable filtering options for note scanning.
-- [ ] 📊 **Link statistics**: Provide stats on the connections between notes to better visualize their interconnections.
-- [ ] 🎨 **Better UI/Design for link selection**: Improve the aesthetics and user interface for selecting links to create.
-- [ ] 🐛 **Fix display bugs/misalignment**: Correct display issues or alignment bugs.
-- [ ] 📝 **Handle special characters properly**: Improve handling of special characters like parentheses or backslashes that JavaScript struggles with.
-- [ ] ⚡ **Optimize speed further**: Make the scanning process even faster and more efficient.
-- [ ] 🖼️ **Customizable selection window**: Allow customization of the selection window, such as the amount of context shown for each link.
-- [ ] 📝 **Alias detection and replacement**: Support the detection and replacement of links using note aliases.
-- [ ] 🔄 **Proper link replacement**: Ensure that link replacement works smoothly, without bugs, and in the correct order.
-- [ ] 🌟 **And many more...**: There’s always room for more improvements and ideas!
-
-## 🛠️ Why this Plugin?
-
-I know there are already similar plugins, but many seem abandoned 😴. So, this plugin was created to fill that gap and meet my own needs. For now, everything is coded in **one file** (`main.js`)—yes, I took the lazy route 😅—but it works, and I think it should hold up fine even with future features.
-
-However, if the community strongly feels it should be refactored into **TypeScript** for cleanliness, that’s an option. Just don’t expect much help from me on that front—**TypeScript** and I don’t get along well 😅.
-
-## 🛠️ Contributing
-
-If you’re comfortable with **JavaScript** or **TypeScript** and you see ways to improve or add features, any help would be greatly appreciated!  
-This project has potential to become cleaner and more robust, so if you want to refactor the code or suggest improvements, **pull requests and issues are open!** 🎉
-
-## 🛠️ Installation
-
-To install and try out the **Obsidian Better Auto Linker Plugin**, follow these steps:
-
-1. Download the `main.js` and `manifest.json` files from this repository.
-2. Create a new folder in your Obsidian vault under the path:  
-   `<your-vault>/.obsidian/plugins/obsidian-better-auto-linker/`
-3. Place the downloaded `main.js` and `manifest.json` files into this folder.
-4. Restart Obsidian.
-5. Go to **Settings** > **Community plugins** and enable the **Obsidian Better Auto Linker Plugin**.
-
-That’s it! The plugin should now be active, and you can start using it to automate the linking of your notes.
-
-## 🔗 Other plugins
-
-I’ve also created other plugins for Obsidian, so if you’re curious, feel free to check them out on my GitHub profile.
-
-## ✉️ Contact
-
-If you have suggestions, ideas for improvements, or run into any bugs, feel free to open an issue or a pull request. Since **English isn’t my first language**, please be patient if I misunderstand something or take time to respond. I’ll do my best to understand and reply! 🤞
-
-## ⭐ Show Your Support
-
-I’m not really concerned about the number of stars, but if you find this project useful or interesting, consider giving it a star on GitHub to help me gauge the interest. If you’d rather not leave a star, that’s totally fine – feel free to open an issue, submit a pull request, or even drop a message of support in an issue instead! All kinds of feedback, advice, and contributions are always welcome and appreciated. 😊
+This plugin was an early attempt (coded entirely in a single `main.js` file with AI help, as I primarily know Python 🐍) to automate link creation in Obsidian. While it had some basic features, it suffered from limitations and was difficult to maintain and extend due to my lack of deep JavaScript/TypeScript knowledge.
 
 ---
 
-Thanks to everyone who takes the time to test, contribute, or even just read this README! Together, we can turn this plugin into something really useful for the Obsidian community. 💪
+## ✨ The Better Solution: Obsidian Python Bridge! ✨
 
+Instead of using this old plugin, I **strongly recommend** using my newer, much more powerful, flexible, and actively developed project:
 
+➡️ **[Obsidian Python Bridge Plugin](https://github.com/mathe00/obsidian-plugin-python-bridge)** ⬅️
+
+**Why switch?**
+
+The **Obsidian Python Bridge** allows you (and me!) to leverage the power and simplicity of **Python** to interact with Obsidian. This means:
+
+*   ✅ **Easier Scripting:** Write complex automation logic in Python, which is often more intuitive for text and file manipulation.
+*   ✅ **More Power:** Access a vastly larger set of Obsidian features via the bridge's API (full vault access, file management, event listening, UI settings per script, etc.).
+*   ✅ **Cross-Platform:** Works reliably on Windows, macOS, and Linux.
+*   ✅ **Active Development:** The Python Bridge is my current focus and is actively being improved.
+
+---
+
+## 🔗 Looking for the Auto-Linking Functionality?
+
+I've recreated and significantly improved the auto-linking logic as a **Python script** that runs using the **Obsidian Python Bridge**. This new script is more robust and configurable.
+
+➡️ **Get the new Auto-Linker Script here:** [**`script-auto-linker.py`**](https://github.com/mathe00/my-obsidian-python-scripts/blob/main/script-auto-linker.py) ⬅️
+*(You'll find it in my repository of example scripts for the Python Bridge)*
+
+**Features of the new Python script version:**
+
+*   Configurable link types (Wikilink, Simple Wikilink, Markdown).
+*   Configurable case preservation, accent ignorance, punctuation handling via **plugin settings**.
+*   More robust matching logic (handles multi-word titles mid-sentence).
+*   Avoids linking inside code/existing links.
+*   Easier to understand and modify (if you know Python!).
+
+---
+
+## 🛠️ What to do now?
+
+1.  **Uninstall** this old "Obsidian Better Auto Linker" plugin if you have it installed.
+2.  **Install** the new **[Obsidian Python Bridge Plugin](https://github.com/mathe00/obsidian-plugin-python-bridge)** (follow its installation instructions).
+3.  **Download** the **[new `script-auto-linker.py` script](https://github.com/mathe00/my-obsidian-python-scripts/blob/main/script-auto-linker.py)** (and potentially others) from the [My Obsidian Python Scripts repository](https://github.com/mathe00/my-obsidian-python-scripts).
+4.  Place the script(s) in the folder you configure within the Python Bridge plugin settings.
+5.  Configure the "Auto Linker" script's settings (like link type) within the Python Bridge settings tab in Obsidian.
+6.  Run the script via the command palette!
+
+---
+
+Thanks for your interest in the original plugin! I hope you find the new Python Bridge and the improved auto-linker script much more powerful and useful. Please direct any new issues or questions to the [Obsidian Python Bridge repository](https://github.com/mathe00/obsidian-plugin-python-bridge).
