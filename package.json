@@ -1,0 +1,41 @@
+{
+  "name": "obsidian-better-auto-linker-plugin",
+  "version": "2.0.0",
+  "description": "Automatically turn note titles mentioned in your notes into links",
+  "main": "main.js",
+  "scripts": {
+    "dev": "bun esbuild.config.mjs",
+    "build": "tsc --noEmit --skipLibCheck && bun esbuild.config.mjs production",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write \"src/**/*.{ts,mts}\" \"*.mjs\"",
+    "format:check": "prettier --check \"src/**/*.{ts,mts}\" \"*.mjs\"",
+    "fix": "bun run lint:fix && bun run format",
+    "typecheck": "tsc --noEmit",
+    "check": "bun run typecheck && bun run lint && bun run format:check && bun run test && bun run build"
+  },
+  "keywords": [
+    "obsidian",
+    "plugin",
+    "auto-linker",
+    "wikilinks"
+  ],
+  "author": "mathe00",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.2.0",
+    "builtin-modules": "^5.3.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.9.0",
+    "globals": "^17.11.0",
+    "obsidian": "^1.13.1",
+    "prettier": "^3.9.6",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.67.0",
+    "vitest": "^4.1.11"
+  }
+}

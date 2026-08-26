@@ -1,0 +1,35 @@
+# vscode
+.vscode
+
+# Intellij
+*.iml
+.idea
+
+# Dependencies
+node_modules
+
+# Bun
+bun.lock
+bun.lockb
+
+# NOTE: `main.js` stays tracked on purpose - users install this plugin by
+# downloading it straight from the repository (see README / AGENTS.md).
+
+# Exclude sourcemaps
+*.map
+
+# obsidian runtime data
+data.json
+
+# AI agent workspace files
+.opencode/
+.kilocode/
+.claude/
+
+# Exclude macOS Finder (System Explorer) View States
+.DS_Store
+
+# Build automation
+Makefile
+coverage/
+dist/

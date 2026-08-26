@@ -1,56 +1,87 @@
-# 📄 Obsidian Better Auto Linker - (OBSOLETE / ARCHIVED)
+# 📄 Obsidian Better Auto Linker Plugin
 
-👋 **Welcome to the repository for the *old* Obsidian Better Auto Linker plugin.**
+👋 **Welcome to the Obsidian Better Auto Linker repository!**
 
-**⚠️ IMPORTANT NOTICE: THIS PLUGIN IS OBSOLETE AND NO LONGER MAINTAINED! ⚠️**
+This plugin **automatically creates links between your notes**: it scans your notes for mentions of other note titles and converts them into links — respecting your existing formatting.
 
-This plugin was an early attempt (coded entirely in a single `main.js` file with AI help, as I primarily know Python 🐍) to automate link creation in Obsidian. While it had some basic features, it suffered from limitations and was difficult to maintain and extend due to my lack of deep JavaScript/TypeScript knowledge.
+## 🕰️ Timeline of this project
 
----
+| Date | Event |
+| --- | --- |
+| **Sept 2024** | 🐣 v1.0 born — a single-file JavaScript plugin (written with AI help, as I'm primarily a Python developer). It worked, but the codebase was hard to maintain and extend. |
+| **2025** | 😴 Development stopped and the repository was archived. My auto-linking work moved to my [Obsidian Python Bridge](https://github.com/mathe00/obsidian-plugin-python-bridge) ecosystem, as [`script-auto-linker.py`](https://github.com/mathe00/my-obsidian-python-scripts/blob/main/script-auto-linker.py) (V2.3) — far more robust matching logic, but requiring Python + the Bridge plugin + a separate script folder. |
+| **Aug 2026** | 🚀 **Un-archived and fully rewritten in TypeScript (v2.0.0)!** Two reasons: (1) for such a keep-it-simple feature, asking users to install Python + a bridge plugin + a script folder is too much friction compared to dropping one folder in `.obsidian/plugins`; (2) modern AI coding assistants have made TypeScript perfectly manageable for me now. Best of both worlds: the Python V2 matching engine, native plugin ergonomics. |
 
-## ✨ The Better Solution: Obsidian Python Bridge! ✨
+The Python Bridge remains fantastic for heavy automation — check it out! But for auto-linking specifically, this plugin is now the recommended way.
 
-Instead of using this old plugin, I **strongly recommend** using my newer, much more powerful, flexible, and actively developed project:
+## ✨ Features
 
-➡️ **[Obsidian Python Bridge Plugin](https://github.com/mathe00/obsidian-plugin-python-bridge)** ⬅️
+- 🔗 **Three link styles**: `[[Title|matched text]]` (alias wikilink), `[[Title]]` (simple), or `[matched text](path.md)` (markdown).
+- 🔡 **Case & accent insensitive**: *"we discussed machine learning over café"* → links to *Machine Learning* and *Café*.
+- 🛡️ **Protected zones are never touched**: YAML frontmatter, fenced & inline code, existing wikilinks/embeds/markdown links/images, `$$math$$` blocks, HTML comments.
+- 📏 **Longest titles win**: *Machine Learning* is preferred over *Learning* when both match.
+- ✂️ **Whole-word matching with Unicode boundaries**: a title is never linked inside a longer word, even with accented first/last letters.
+- 🗂️ **Excluded folders**: notes under configured paths are never scanned nor modified (legacy v1 setting migrates automatically).
+- 🚫 **Self-reference skipping**: a note doesn't link its own title inside itself (toggleable).
+- ⚛️ **Vault-wide command** with confirmation dialog and progress notice, or per-note from the command palette.
+- 📱 **Desktop AND mobile** — pure vault API, no Node-only dependencies.
 
-**Why switch?**
+## 🆚 Compared to previous versions
 
-The **Obsidian Python Bridge** allows you (and me!) to leverage the power and simplicity of **Python** to interact with Obsidian. This means:
+| | v1 (JS, 2024) | Python script (V2.3) | **v2 (TS, 2026)** |
+| --- | --- | --- | --- |
+| Install | ✅ one folder | ❌ Python + Bridge + script | ✅ one folder |
+| Accent-insensitive matching | ❌ | ✅ (index-shift bug on NFD text) | ✅ fixed via index map |
+| Multi-word titles mid-sentence | ⚠️ partial | ✅ | ✅ |
+| Avoids code/existing links | ❌ (regex guess) | ⚠️ midpoint heuristic | ✅ structural ranges |
+| Longest-title-wins overlap handling | ❌ | ✅ | ✅ |
+| Redundant alias pipes (`[[X\|X]]`) | ❌ produced them | ❌ produced them | ✅ collapsed |
+| Vault-wide processing | ❌ | ❌ active note only | ✅ with confirmation |
+| Mobile support | ⚠️ | ❌ desktop bridge | ✅ |
 
-*   ✅ **Easier Scripting:** Write complex automation logic in Python, which is often more intuitive for text and file manipulation.
-*   ✅ **More Power:** Access a vastly larger set of Obsidian features via the bridge's API (full vault access, file management, event listening, UI settings per script, etc.).
-*   ✅ **Cross-Platform:** Works reliably on Windows, macOS, and Linux.
-*   ✅ **Active Development:** The Python Bridge is my current focus and is actively being improved.
+## 🛠️ Installation
 
----
+1. Download `main.js` and `manifest.json` from this repository (or the [latest release](https://github.com/mathe00/obsidian-better-auto-linker-plugin/releases)).
+2. Create a folder in your vault: `<your-vault>/.obsidian/plugins/obsidian-better-auto-linker-plugin/`
+3. Place both files inside, then restart Obsidian.
+4. Enable **Better Auto Linker** under **Settings → Community plugins**.
 
-## 🔗 Looking for the Auto-Linking Functionality?
+Upgrading from v1? Your *Excluded Folders* setting carries over automatically.
 
-I've recreated and significantly improved the auto-linking logic as a **Python script** that runs using the **Obsidian Python Bridge**. This new script is more robust and configurable.
+## 🚀 Usage
 
-➡️ **Get the new Auto-Linker Script here:** [**`script-auto-linker.py`**](https://github.com/mathe00/my-obsidian-python-scripts/blob/main/script-auto-linker.py) ⬅️
-*(You'll find it in my repository of example scripts for the Python Bridge)*
+Open the command palette (`Ctrl/Cmd+P`):
 
-**Features of the new Python script version:**
+- **Auto-link active note** — converts titles found in the current note and shows how many links were created.
+- **Auto-link entire vault…** — asks for confirmation, then processes every eligible note with a progress notice and a summary.
 
-*   Configurable link types (Wikilink, Simple Wikilink, Markdown).
-*   Configurable case preservation, accent ignorance, punctuation handling via **plugin settings**.
-*   More robust matching logic (handles multi-word titles mid-sentence).
-*   Avoids linking inside code/existing links.
-*   Easier to understand and modify (if you know Python!).
+### Settings
 
----
+| Setting | Default | Description |
+| --- | --- | --- |
+| Link Type | Wikilink (with alias) | Output syntax: alias wikilink / simple wikilink / markdown link |
+| Preserve Original Case | On | Keeps casing as typed ([[Title\|oRiginal]]); ignored by simple wikilinks |
+| Ignore Accents When Matching | On | `cafe` can link to a note titled *Café* |
+| Skip Self-references | On | Never link a title inside its own note |
+| Excluded Folders | *(empty)* | One folder path per line; matching notes are untouched |
 
-## 🛠️ What to do now?
+## 🧑‍💻 Development
 
-1.  **Uninstall** this old "Obsidian Better Auto Linker" plugin if you have it installed.
-2.  **Install** the new **[Obsidian Python Bridge Plugin](https://github.com/mathe00/obsidian-plugin-python-bridge)** (follow its installation instructions).
-3.  **Download** the **[new `script-auto-linker.py` script](https://github.com/mathe00/my-obsidian-python-scripts/blob/main/script-auto-linker.py)** (and potentially others) from the [My Obsidian Python Scripts repository](https://github.com/mathe00/my-obsidian-python-scripts).
-4.  Place the script(s) in the folder you configure within the Python Bridge plugin settings.
-5.  Configure the "Auto Linker" script's settings (like link type) within the Python Bridge settings tab in Obsidian.
-6.  Run the script via the command palette!
+TypeScript strict toolchain (ESLint strict-type-checked + Prettier + Vitest) bundled with esbuild. Prerequisites: [Bun](https://bun.sh).
 
----
+```bash
+bun install        # install dependencies
+bun run dev        # watch mode (rebuilds main.js)
+bun run test       # unit tests
+bun run check      # typecheck + lint + format + tests + production build
+```
 
-Thanks for your interest in the original plugin! I hope you find the new Python Bridge and the improved auto-linker script much more powerful and useful. Please direct any new issues or questions to the [Obsidian Python Bridge repository](https://github.com/mathe00/obsidian-plugin-python-bridge).
+> The compiled `main.js` **is committed** on purpose: installing by downloading files straight from the repository stays possible without a release pipeline.
+
+## 🛠️ Contributing
+
+I'm a **Python developer** originally — this rewrite exists precisely because AI assistants made clean TypeScript realistic for me. Issues and PRs are welcome! English isn't my first language, so thanks for your patience with my replies 😅.
+
+## ⭐ Show Your Support
+
+If this plugin saves you time, a star helps gauge interest — and feedback/issues are always welcome. Happy linking! 🔗✨
